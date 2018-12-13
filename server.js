@@ -8,10 +8,9 @@ const PORT = 5000
 app.get('/test/service', (req, res)=> {
 	console.log('get msg')
 	res.json([{
-		'id' : 1, 'name' : 'John'
+		'id' : 1, 'name' : 'Johnn'
 	}])
 })
-
 app.listen(PORT, (msg)=>console.log('server listening at'+ PORT + msg))
 
 app.post('/fetch_groups',function(req,res){
