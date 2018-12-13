@@ -1,0 +1,29 @@
+{
+  "name": "chip-patt",
+  "version": "1.0.0",
+  "description": "chit picking application for team",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev" : "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AnandShiva/chit-patt.git"
+  },
+  "keywords": [
+    "chit-patt"
+  ],
+  "author": "Anand",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AnandShiva/chit-patt/issues"
+  },
+  "homepage": "https://github.com/AnandShiva/chit-patt#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.7"
+  }
+}
