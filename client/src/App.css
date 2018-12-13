@@ -1,0 +1,62 @@
+body {
+  text-align: center;
+  background-color: #B5ECCF;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+}
+.tasks {
+  float: left;
+  width : 300px;
+  margin-left: 50px;
+}
+.people {
+  margin-right: 50px;
+  float: right;
+  width : 300px;
+}
+.submit {
+  clear: both;
+  justify-content: center;
+}
+.team_cards{
+  max-width: 250px;
+  min-width: 100px;
+  float: left;
+  margin: 30px;
+}
+.team_container{
+  float: left;
+  justify-content: center;
+  fill: all;
+  max-width: 500px;
+}
+.cards_chip{
+  margin: 10px;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
