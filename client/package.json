@@ -18,7 +18,7 @@
   "eslintConfig": {
     "extends": "react-app"
   },
-  "proxy": "http://localhost:5000/",
+  "proxy": "http://chit-patt.s3-website.us-east-2.amazonaws.com:5000/",
   "browserslist": [
     ">0.2%",
     "not dead",

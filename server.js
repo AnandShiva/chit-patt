@@ -3,7 +3,7 @@ app = express()
 var bodyParser = require('body-parser')
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }));
-const PORT = 5000
+const PORT = 8080
 
 app.get('/test/service', (req, res)=> {
 	console.log('get msg')

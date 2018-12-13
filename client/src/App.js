@@ -9,16 +9,18 @@ class App extends Component {
   constructor(){
     super();
     this.state = {
-      tasks_list : ['t1','t2','t3'].map(function(obj){
+      /*tasks_list : ['t1','t2','t3'].map(function(obj){
         return {
           value : obj
         }
-      }),
-      people_list : ['p1','p2','p3','p4','p5','p6'].map(function(obj){
+      }),*/
+      tasks_list : [],
+     /* people_list : ['p1','p2','p3','p4','p5','p6'].map(function(obj){
         return {
           value : obj
         }
-      }), 
+      }), */
+      people_list : [],
       teams : []
     }
   }
