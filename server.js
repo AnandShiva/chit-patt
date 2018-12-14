@@ -10,6 +10,13 @@ try{
 	console.log(e);
 }
 
+app.get('/test/service', (req, res)=> {
+	console.log('get msg')
+	res.json([{
+		'id' : 1, 'name' : 'John'
+	}])
+})
+
 app.post('/fetch_groups',function(req,res){
 	let aUsers = req.body.Users
 	//console.log(JSON.stringify(req.body));

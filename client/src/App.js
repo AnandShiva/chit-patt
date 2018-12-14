@@ -27,7 +27,7 @@ class App extends Component {
   /*
     List type enum : tasks or people
   */
-  groups_list_update =(groups_list, list_type)=>{
+  groups_list_update = (groups_list, list_type)=> {
     this.state[list_type+'_list'] = groups_list;
     this.setState(this.state);
   }
@@ -45,12 +45,12 @@ class App extends Component {
       Users : people_list,
       Groups : tasks_list
     }
-    fetch("/fetch_groups",{
+
+    fetch("http://ubuntu@ec2-54-88-253-198.compute-1/fetch_groups",{
       method : 'post', 
       body : JSON.stringify(request_object),
       headers: {
-            "Content-Type": "application/json; charset=utf-8",
-            // "Content-Type": "application/x-www-form-urlencoded",
+            "Content-Type": "application/json; charset=utf-8"
       },
     }).then(res=>res.json()).then((data)=>{
         this.state.teams = [];
