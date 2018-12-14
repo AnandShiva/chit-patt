@@ -18,7 +18,7 @@
   "eslintConfig": {
     "extends": "react-app"
   },
-  "proxy": "http://localhost:8080/",
+  "proxy": "http://ubuntu@ec2-54-88-253-198.compute-1.amazonaws.com:3000",
   "browserslist": [
     ">0.2%",
     "not dead",
