@@ -11,7 +11,7 @@ app.get('/test/service', (req, res)=> {
 		'id' : 1, 'name' : 'John'
 	}])
 })
-app.listen(PORT, (msg)=>console.log('server listening at'+ PORT + msg))
+app.listen(PORT, (msg)=>console.log('server listening at'+ PORT ))
 
 app.post('/fetch_groups',function(req,res){
 	let aUsers = req.body.Users
