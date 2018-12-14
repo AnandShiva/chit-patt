@@ -45,8 +45,8 @@ class App extends Component {
       Users : people_list,
       Groups : tasks_list
     }
-
-    fetch("http://ubuntu@ec2-54-88-253-198.compute-1/fetch_groups",{
+    console.log(JSON.stringify(request_object));
+    fetch("http://54.88.253.198:3000/fetch_groups",{
       method : 'post', 
       body : JSON.stringify(request_object),
       headers: {
