@@ -3,19 +3,16 @@ app = express()
 var bodyParser = require('body-parser')
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }));
-const PORT = 3000
-
-app.get('/test/service', (req, res)=> {
-	console.log('get msg')
-	res.json([{
-		'id' : 1, 'name' : 'John'
-	}])
-})
-app.listen(PORT, (msg)=>console.log('server listening at'+ PORT ))
+const PORT = 3000;
+try{
+	app.listen(PORT || 3000, (msg)=>console.log('server listening at'+ PORT ));
+}catch(e){
+	console.log(e);
+}
 
 app.post('/fetch_groups',function(req,res){
 	let aUsers = req.body.Users
-	console.log(JSON.stringify(req.body));
+	//console.log(JSON.stringify(req.body));
 	let aGroups = req.body.Groups
 	/*
 	User = {
@@ -30,10 +27,10 @@ app.post('/fetch_groups',function(req,res){
 })
 
 function mapUsersToGroups(aUsers,aGroups){
-	console.log(JSON.stringify(aUsers))
-	console.log(JSON.stringify(aGroups))
+	//console.log(JSON.stringify(aUsers))
+	//console.log(JSON.stringify(aGroups))
 	let max_group_size = Math.ceil(aUsers.length/aGroups.length)
-	console.log(max_group_size)
+	//console.log(max_group_size)
 	var oGroupUserMap = {
 		// groupName : [user1_obj, user2_obj]
 	}
@@ -68,7 +65,7 @@ function mapUsersToGroups(aUsers,aGroups){
 			oGroupUserMap[random_group_name].push(oCurrentUser) 
 		}
 	}
-	console.log(oGroupUserMap)
+	//console.log(oGroupUserMap)
 	return oGroupUserMap
 
 }
