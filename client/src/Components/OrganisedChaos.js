@@ -8,7 +8,7 @@ import '../App.css';
 
 class OrganisedChaos extends Component{
 	render(){
-		console.log(this.props.teams_list);
+		//console.log(this.props.teams_list);
 		return(
 			this.props.teams_list.map((team)=>{
 				return(<Card className='team_cards'>

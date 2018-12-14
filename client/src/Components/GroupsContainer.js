@@ -26,14 +26,14 @@ class GroupsContainer extends Component{
 		this.props.on_items_change(new_immutable_group_list,this.props.name);
 	}
 	delete_group = (group_data)=>{
-		console.log(group_data);
+		//console.log(group_data);
 		let new_immutable_group_list = this.props.groups_list.slice();
 		new_immutable_group_list.splice(group_data.id, 1);
 		this.props.on_items_change(new_immutable_group_list,this.props.name);
 	} 
-	handleGroupValueChange = (changed_group_value, group_index)=>{
+	handleGroupValueChange = (changed_group_value, group_index)=>{	
 		let new_immutable_group_list = this.props.groups_list.slice();
-		console.log(changed_group_value)
+		//console.log(changed_group_value)
 		new_immutable_group_list[group_index] = changed_group_value;
 		this.props.on_items_change(new_immutable_group_list,this.props.name);
 	}
