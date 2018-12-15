@@ -27,9 +27,9 @@ app.get('/test/service', (req, res)=> {
 })
 
 app.post('/fetch_groups',function(req,res){
-	let aUsers = req.body.Users
+	let aUsers = req.body.Users || []
 	//console.log(JSON.stringify(req.body));
-	let aGroups = req.body.Groups
+	let aGroups = req.body.Groups || []
 	/*
 	User = {
 		Name,
@@ -38,6 +38,11 @@ app.post('/fetch_groups',function(req,res){
 	}
 	Group = string of groupName 
 	*/
+	res.set({
+  		'Content-Type': 'application/json; charset=utf-8', 
+  		'Access-Control-Allow-Origin' : ["*"]
+	});
+
 	res.json(mapUsersToGroups(aUsers,aGroups))
 
 })
@@ -45,6 +50,9 @@ app.post('/fetch_groups',function(req,res){
 function mapUsersToGroups(aUsers,aGroups){
 	//console.log(JSON.stringify(aUsers))
 	//console.log(JSON.stringify(aGroups))
+	if(!(aUsers.length || aGroups.length)){
+		return {};
+	}
 	let max_group_size = Math.ceil(aUsers.length/aGroups.length)
 	//console.log(max_group_size)
 	var oGroupUserMap = {
