@@ -3,6 +3,15 @@ app = express()
 var bodyParser = require('body-parser')
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }));
+
+//CORS response header addition. 
+app.use((req, res, next) => {
+    res.append('Access-Control-Allow-Origin', ['*']);
+    res.append('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+    res.append('Access-Control-Allow-Headers', 'Content-Type');
+    next();
+});
+
 const PORT = 3000;
 try{
 	app.listen(PORT || 3000, (msg)=>console.log('server listening at'+ PORT ));
