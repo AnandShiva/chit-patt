@@ -2,6 +2,12 @@ body {
   text-align: center;
   background-color: #B5ECCF;
 }
+.App {
+  width : '100%';
+  flex-direction: column;
+  align-items: center;
+  display: inline-flex;
+}
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
@@ -9,32 +15,55 @@ body {
 }
 .tasks {
   float: left;
-  width : 300px;
+  width : '30%';
   margin-left: 50px;
 }
 .people {
-  margin-right: 50px;
   float: right;
-  width : 300px;
+  margin-right: 50px;
+}
+.team_container{
+  float: left;
+  width: '30%';
+  min-width: 300px;
+  max-width: 500px;
+  margin: 50px;
 }
 .submit {
   clear: both;
   justify-content: center;
 }
+.team_cards_content {
+  display: list-item;
+  flex-direction: column;
+  justify-content: center;
+}
 .team_cards{
-  max-width: 250px;
-  min-width: 100px;
-  float: left;
   margin: 30px;
 }
-.team_container{
-  float: left;
-  justify-content: center;
-  fill: all;
-  max-width: 500px;
-}
+
 .cards_chip{
   margin: 10px;
+  padding: 10px;
+}
+.cards_chip_container{
+  display: inline-flex;
+}
+.user_item_container{
+  display: inline-flex;
+}
+.user_item{
+  margin: 50px;
+}
+.user_task_select{
+  min-width: 100px;
+}
+
+.add_group_item{
+}
+.select_drop_down{
+  background-color: #B5ECCF;
+  border: none;
 }
 
 .App-header {

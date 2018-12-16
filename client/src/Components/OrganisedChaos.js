@@ -8,18 +8,18 @@ import '../App.css';
 
 class OrganisedChaos extends Component{
 	render(){
-		//console.log(this.props.teams_list);
 		return(
 			this.props.teams_list.map((team)=>{
 				return(<Card className='team_cards'>
-				<CardContent>
+				<CardContent className='team_cards_content'>
         			<Typography color="textSecondary" gutterBottom>
          				<b>{team.team_name}</b>
         			</Typography>
-        			{team.team_members.map((member)=>{
-        				return (<Chip className='cards_chip' label={member.Name} />);
+        			<div className='cards_chip_container'>
+        			{team.team_members.map((member, index)=>{
+        				return (<Chip key={index} className='cards_chip' label={member.Name} />);
         			})}
-        		
+        			</div>
         		</CardContent>	
 				</Card>)
 			})

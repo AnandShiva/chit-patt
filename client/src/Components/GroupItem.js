@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import TextField from '@material-ui/core/TextField'
 import DeleteIcon from '@material-ui/icons/Delete'
 import IconButton from '@material-ui/core/IconButton';
-import './GroupItem.css';
+import '../App.css';
 
 class GroupItem extends Component{
 	constructor(){
@@ -22,7 +22,8 @@ class GroupItem extends Component{
 	}
 	render(){
 		return (<div >
-		<TextField id={this.props.id} placeholder='Task Description ' label={this.props.label} onChange={this.on_change} value={this.props.value} />  
+		<TextField id={this.props.id} placeholder='Task Description ' label={"Task "+Number(this.props.id+1)} 
+		onChange={this.on_change} value={this.props.value} />  
 		<IconButton size='medium' arial-label='delete'>
 		<DeleteIcon onClick={(e)=>this.on_click(e)} />
 		</IconButton>

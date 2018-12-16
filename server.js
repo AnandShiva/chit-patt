@@ -38,10 +38,6 @@ app.post('/fetch_groups',function(req,res){
 	}
 	Group = string of groupName 
 	*/
-	res.set({
-  		'Content-Type': 'application/json; charset=utf-8', 
-  		'Access-Control-Allow-Origin' : ["*"]
-	});
 
 	res.json(mapUsersToGroups(aUsers,aGroups))
 

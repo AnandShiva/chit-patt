@@ -3,24 +3,27 @@ import logo from './logo.svg';
 import './App.css';
 import TextField from '@material-ui/core/TextField'
 import Button  from '@material-ui/core/Button'
-import GroupsContainer from './Components/GroupsContainer'
+import GroupsContainer from './Components/GroupsContainer';
+import UsersContainer from './Components/UsersContainer'
 import OrganisedChaos from './Components/OrganisedChaos';
 class App extends Component {
   constructor(){
     super();
     this.state = {
-      /*tasks_list : ['t1','t2','t3'].map(function(obj){
+      tasks_list : ['t1','t2','t3'].map(function(obj){
         return {
           value : obj
         }
-      }),*/
-      tasks_list : [],
-     /* people_list : ['p1','p2','p3','p4','p5','p6'].map(function(obj){
+      }),
+      //tasks_list : [],
+     people_list : ['p1','p2','p3','p4','p5','p6'].map(function(obj){
         return {
-          value : obj
+          value : obj, 
+          preferred_task : '', 
+          email_id : ''
         }
-      }), */
-      people_list : [],
+      }), 
+      //people_list : [],
       teams : []
     }
   }
@@ -38,14 +41,14 @@ class App extends Component {
     let people_list = this.state.people_list.map(function(people){
         return {
           Name : people.value,
-          PreferredGroup : ""
+          PreferredGroup : people.preferred_task
         }
     });
     let request_object = {
       Users : people_list,
       Groups : tasks_list
     }
-    console.log(JSON.stringify(request_object));
+    //console.log(JSON.stringify(request_object));
     fetch("http://54.88.253.198:3000/fetch_groups",{
       method : 'post', 
       body : JSON.stringify(request_object),
@@ -77,12 +80,13 @@ class App extends Component {
               <div className='tasks'>
                  <GroupsContainer name='tasks' groups_list={this.state.tasks_list} on_items_change={this.groups_list_update} />
               </div>
-              <div className='team_container'>
-              {results}
-              </div>
               <div className='people'>
-                  <GroupsContainer name='people' groups_list={this.state.people_list} on_items_change={this.groups_list_update} />
+                  <UsersContainer name='people' groups_list={this.state.people_list} 
+                  task_list={this.state.tasks_list} on_items_change={this.groups_list_update} />
              </div>
+              <div className='team_container'>
+                {results}
+              </div>
              <div className='submit' onClick={this.on_submit}>
               <Button variant="contained" color="primary" >
                 Submit
