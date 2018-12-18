@@ -3,22 +3,18 @@ import List from '@material-ui/core/List'
 import ListItem from "@material-ui/core/ListItem";
 import IconButton from '@material-ui/core/IconButton';
 import AddIcon from '@material-ui/icons/Add';
-import { withStyles } from "@material-ui/core/styles";
-import GroupItem from './GroupItem';
 import UserItem from './UserItem';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 
-class GroupsContainer extends Component{
-	constructor(){
-		super();
-	}
+class UsersContainer extends Component{
 
 	on_addbutton_press = ()=>{
 		let new_mutable_group_list = this.props.groups_list.slice();
 		new_mutable_group_list.push({
 			id : this.props.groups_list.length,
-			value : ''
+			value : '',
+			preferred_task : ''
 		});
 		this.props.on_items_change(new_mutable_group_list,this.props.name);
 	}
@@ -36,7 +32,7 @@ class GroupsContainer extends Component{
 	}
 	render(){
 			var divStyle = {
-				'width' : '200px',
+				'width' : '40%',
 				'height' : '50px',
 				'align-self' : 'center',
 				'text-align' : 'center'
@@ -50,14 +46,16 @@ class GroupsContainer extends Component{
           			{this.props.name}
        			  </Typography>
 				</Paper>
-				<IconButton onClick={this.on_addbutton_press} >
+				<IconButton  onClick={this.on_addbutton_press}>
 					<AddIcon />
 				</IconButton>
 			</ListItem>
 				{this.props.groups_list.map((group,index) => 
-				<ListItem> 
-						<GroupItem id={index} on_change={this.handleGroupValueChange} 
-							label={this.props.name+' '+index+1} 
+				<ListItem key={index} > 
+						<UserItem id={index} on_change={this.handleGroupValueChange} 
+							label={this.props.name+' '+index}
+							task_list={this.props.task_list}
+							preferred_task={this.props.preferred_task}
 							value={group.value} on_delete={this.delete_group} /> 
 				</ListItem> ) }
 			</List>
@@ -67,4 +65,4 @@ class GroupsContainer extends Component{
 	}
 }
 
-export default (GroupsContainer);
+export default (UsersContainer);
