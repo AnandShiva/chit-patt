@@ -48,7 +48,7 @@ class App extends Component {
       Groups: tasks_list
     }
     //console.log(JSON.stringify(request_object));
-    fetch("http://54.88.253.198:3000/fetch_groups", {
+    fetch("http://18.233.165.46:3000/fetch_groups", {
       method: 'post',
       body: JSON.stringify(request_object),
       headers: {
