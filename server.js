@@ -28,7 +28,7 @@ app.get('/test/service', (req, res) => {
 })
 var ReactDOM = require('react-dom');
 var React = require('react');
-var OrganisedChaos = require('./client/src/Components/OrganisedChaos');
+import  OrganisedChaos from './client/src/Components/OrganisedChaos';
 import ReactDOMServer from 'react-dom/server'
 
 app.post('/fetch_groups', function (req, res) {

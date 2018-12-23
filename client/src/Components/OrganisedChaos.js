@@ -27,4 +27,4 @@ class OrganisedChaos extends Component{
 	}
 }
 
-module.exports = OrganisedChaos;
+export default OrganisedChaos;
