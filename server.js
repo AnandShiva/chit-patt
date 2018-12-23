@@ -1,5 +1,6 @@
-express = require('express')
-app = express()
+const express = require('express')
+const app = express()
+const send_mail = require('./mailer')
 var bodyParser = require('body-parser')
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -25,6 +26,10 @@ app.get('/test/service', (req, res) => {
 		'id': 1, 'name': 'John'
 	}])
 })
+var ReactDOM = require('react-dom');
+var React = require('react');
+var OrganisedChaos = require('./client/src/Components/OrganisedChaos');
+import ReactDOMServer from 'react-dom/server'
 
 app.post('/fetch_groups', function (req, res) {
 	let aUsers = req.body.Users || []
@@ -38,9 +43,10 @@ app.post('/fetch_groups', function (req, res) {
 	}
 	Group = string of groupName 
 	*/
-
-	res.json(mapUsersToGroups(aUsers, aGroups))
-
+	let team_list  = mapUsersToGroups(aUsers, aGroups)
+	var email_html_body = ReactDOMServer.renderToString(<OrganisedChaos teams_list={teams_list} />);
+	var status = send_mail("Task List !", email_html_body,team_list)
+	res.json(team_list)
 })
 
 function mapUsersToGroups(aUsers, aGroups) {
