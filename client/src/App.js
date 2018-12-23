@@ -39,7 +39,8 @@ class App extends Component {
     let people_list = this.state.people_list.map(function (people) {
       return {
         Name: people.value,
-        PreferredGroup: people.preferred_task
+        PreferredGroup: people.preferred_task, 
+        email : people.email_id
       }
     });
     let request_object = {
@@ -54,13 +55,7 @@ class App extends Component {
         "Content-Type": "application/json; charset=utf-8"
       },
     }).then(res => res.json()).then((data) => {
-      this.state.teams = [];
-      let teams_list = Object.keys(data).forEach((key) => {
-        this.state.teams.push({
-          team_name: key,
-          team_members: data[key]
-        })
-      })
+      this.state.teams = data;
       this.setState(this.state);
     })
   }

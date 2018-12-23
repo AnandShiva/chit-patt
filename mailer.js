@@ -21,7 +21,7 @@ let transporter = nodemailer.createTransport({
     }
 });
 
-sendEMail = (subject, body, mailing_list) => {
+var sendEMail = (subject, body, mailing_list) => {
     // setup email data with unicode symbols
     let mailOptions = {
         from: '"SSB" <ssb.sap.com>', // sender address
@@ -31,7 +31,8 @@ sendEMail = (subject, body, mailing_list) => {
         html: body // html body
     };
 
-    // send mail with defined transport object
+
+     // send mail with defined transport object
     transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
             return console.log(error);
@@ -41,7 +42,7 @@ sendEMail = (subject, body, mailing_list) => {
         console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
         // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
         // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
-    });
+    }); 
 
 }
 

@@ -28,7 +28,7 @@ app.get('/test/service', (req, res) => {
 })
 var ReactDOM = require('react-dom');
 var React = require('react');
-import  OrganisedChaos from './client/src/Components/OrganisedChaos';
+import OrganisedChaos from './client/src/Components/OrganisedChaos';
 import ReactDOMServer from 'react-dom/server'
 
 app.post('/fetch_groups', function (req, res) {
@@ -43,15 +43,22 @@ app.post('/fetch_groups', function (req, res) {
 	}
 	Group = string of groupName 
 	*/
-	let team_list  = mapUsersToGroups(aUsers, aGroups)
+	let team_users_map  = mapUsersToGroups(aUsers, aGroups)
 	let email_list = aUsers.map((user)=>{
 		return user.email;
 	}).filter((email)=>{
 		return email;
 	})
+	let teams_list = [];
+	Object.keys(team_users_map).forEach((key) => {
+        teams_list.push({
+          team_name: key,
+          team_members: team_users_map[key]
+        })
+      })
 	var email_html_body = ReactDOMServer.renderToString(<OrganisedChaos teams_list={teams_list} />);
-	var status = send_mail("Task List !", email_html_body,team_list)
-	res.json(team_list)
+	var status = send_mail("Task List !", email_html_body,email_list)
+	res.json(teams_list)
 })
 
 function mapUsersToGroups(aUsers, aGroups) {
