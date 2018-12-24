@@ -28,7 +28,7 @@ app.get('/test/service', (req, res) => {
 })
 var ReactDOM = require('react-dom');
 var React = require('react');
-import OrganisedChaos from './client/src/Components/OrganisedChaos';
+import OrganisedChaos from './client/src/Components/OrganisedChaosForEmail';
 import ReactDOMServer from 'react-dom/server'
 
 app.post('/fetch_groups', function (req, res) {
@@ -49,6 +49,9 @@ app.post('/fetch_groups', function (req, res) {
 	}).filter((email)=>{
 		return email;
 	})
+
+	email_list = [...new Set(email_list)]
+	console.log(email_list.toString())
 	let teams_list = [];
 	Object.keys(team_users_map).forEach((key) => {
         teams_list.push({
