@@ -13,7 +13,9 @@ class App extends Component {
           value: obj
         }
       }), */
-      tasks_list : [],
+      tasks_list : [{
+        value: ""
+      }],
       /* people_list: ['p1', 'p2', 'p3', 'p4', 'p5', 'p6'].map(function (obj) {
         return {
           value: obj,
@@ -21,7 +23,11 @@ class App extends Component {
           email_id: ''
         }
       }), */
-      people_list : [],
+      people_list : [{
+        value: '',
+        preferred_task: '',
+        email_id: ''
+      }],
       teams: []
     }
   }
