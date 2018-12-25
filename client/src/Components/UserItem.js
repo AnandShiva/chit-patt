@@ -2,16 +2,9 @@ import React, {Component} from 'react'
 import TextField from '@material-ui/core/TextField'
 import DeleteIcon from '@material-ui/icons/Delete'
 import IconButton from '@material-ui/core/IconButton';
-/*import Option from 'muicss/lib/react/option';
-import Select from 'muicss/lib/react/select';*/
 import { withStyles } from '@material-ui/core/styles';
 import FormControl from '@material-ui/core/FormControl';
-import FilledInput from '@material-ui/core/FilledInput';
-import MenuItem from '@material-ui/core/MenuItem';
-import Select from '@material-ui/core/Select';
-import my_select from './Select'
 import InputLabel from '@material-ui/core/InputLabel';
-import Input from '@material-ui/core/Input';
 import '../App.css';
 
 import ListItemText from '@material-ui/core/ListItemText';
@@ -69,7 +62,6 @@ class UserItem extends Component{
 
 	render(){
 		const { classes } = this.props;
-		var options_list = ['1','2','3','4','5'];
 		return (<div className="user_item_container">
 		<TextField  className="user_item" id={this.props.id} placeholder='User Name' 
 			label={"User "+ Number(this.props.id+1)} onChange={this.on_change_user_name} value={this.props.value} /> 

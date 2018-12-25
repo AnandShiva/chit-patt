@@ -8,29 +8,35 @@ body {
   align-items: center;
   display: inline-flex;
 }
+.back_section {
+    display: flex;
+    align-items : flex-start;
+    justify-content: center;
+    margin-right: 200px;
+}
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 40vmin;
+}
+
+.people {
+  float: right;
+  margin-right: 50px;
+}
+.teams_container{
+  clear: both;
+  width: '100%';
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .tasks {
   float: left;
   width : '30%';
   margin-left: 50px;
 }
-.people {
-  float: right;
-  margin-right: 50px;
-}
-.team_container{
-  float: left;
-  width: '30%';
-  min-width: 300px;
-  max-width: 500px;
-  margin: 50px;
-}
 .submit {
-  clear: both;
   justify-content: center;
 }
 .team_cards_content {

@@ -38,7 +38,7 @@ class UsersContainer extends Component{
 				'text-align' : 'center'
 			}
 		return (
-			<div>
+			<div className='people'>
 			<List>
 			<ListItem className="add_group_item"> 
 				<Paper style={divStyle} >

@@ -3,9 +3,8 @@ import List from '@material-ui/core/List'
 import ListItem from "@material-ui/core/ListItem";
 import IconButton from '@material-ui/core/IconButton';
 import AddIcon from '@material-ui/icons/Add';
-import { withStyles } from "@material-ui/core/styles";
 import GroupItem from './GroupItem';
-import UserItem from './UserItem';
+import '../App.css';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 
@@ -42,7 +41,7 @@ class GroupsContainer extends Component{
 				'text-align' : 'center'
 			}
 		return (
-			<div>
+			<div className='tasks'>
 			<List>
 			<ListItem className="add_group_item"> 
 				<Paper style={divStyle} >
