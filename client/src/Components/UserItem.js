@@ -62,7 +62,7 @@ class UserItem extends Component{
 
 	render(){
 		const { classes } = this.props;
-		return (<div className="user_item_container">
+		return (<div className="list_item">
 		<TextField  className="user_item" id={this.props.id} placeholder='User Name' 
 			label={"User "+ Number(this.props.id+1)} onChange={this.on_change_user_name} value={this.props.value} /> 
 		<ListItemText />
@@ -78,10 +78,7 @@ class UserItem extends Component{
           </select>
 		</FormControl>
       	</form>
-        </div>
-        <ListItemText />
-		<TextField className="user_item" id={this.props.id} placeholder='EMAIL ID' label={'User Email ID '+ Number(this.props.id+1)} 
-			onChange={this.on_change_email} value={this.props.email_id} />  		
+        </div>		
 		<IconButton className="user_item" size='medium' arial-label='delete'>
 		<DeleteIcon onClick={(e)=>this.on_click(e)} />
 		</IconButton>

@@ -64,6 +64,13 @@ app.post('/fetch_groups', function (req, res) {
 	res.json(teams_list)
 })
 
+app.post('/sendEMail', function (req, res) {
+	let teams_list = req.body.teams_list || [];
+	var email_html_body = ReactDOMServer.renderToString(<OrganisedChaos teams_list={teams_list} />);
+	var status = send_mail("Task List !", email_html_body,email_list)
+	res.json(teams_list)
+})
+
 function mapUsersToGroups(aUsers, aGroups) {
 	//console.log(JSON.stringify(aUsers))
 	//console.log(JSON.stringify(aGroups))

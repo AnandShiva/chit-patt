@@ -21,8 +21,8 @@ class GroupItem extends Component{
 		this.props.on_change(changed_group_data, this.props.id);
 	}
 	render(){
-		return (<div >
-		<TextField id={this.props.id} placeholder='Task Description ' label={"Task "+Number(this.props.id+1)} 
+		return (<div className="list_item">
+		<TextField className="flex_items" id={this.props.id} placeholder='Task Description ' label={"Task "+Number(this.props.id+1)} 
 		onChange={this.on_change} value={this.props.value} />  
 		<IconButton size='medium' arial-label='delete'>
 		<DeleteIcon onClick={(e)=>this.on_click(e)} />
